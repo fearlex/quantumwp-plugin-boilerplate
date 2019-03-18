@@ -24,14 +24,17 @@ if ( ! class_exists( 'PluginName' ) ) {
 	include_once dirname( __FILE__ ) . '/includes/class-plugin-name.php';
 }
 
-/**
- * Main instance of PluginName.
- *
- * @since  0.0.1
- * @return PluginName
- */
-function pn() {
-	return PluginName::instance();
+//-- If Main function exist
+if ( ! function_exists( 'pn' ) ) {
+	/**
+	 * Main instance of PluginName.
+	 *
+	 * @since  0.0.1
+	 * @return PluginName
+	 */
+	function pn() {
+		return PluginName::instance();
+	}
 }
 
 pn();
